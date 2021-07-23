@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap')
+
+$PrimaryColor: #a8dadc
+$SecondaryColor: #457b9d
+$ThirdColor: #1d3557
+
+@mixin Flex
+	font-family: Courier New, Courier, monospace
+	display: flex
+	justify-content: center
+
+@mixin Button
+	width: 100%
+	color: white
+	padding: 10px 10px
+	margin: 8px 0
+	border: none
+	border-radius: 4px
+	cursor: pointer
+	margin-right: 10px
+
+body
+	background-color: $SecondaryColor
+
+section.SectionForm
+	@include Flex
+
+section.SectionTable
+	@include Flex
+	margin-top: 20px
+
+div.DivContainer
+	background-color: $PrimaryColor
+	border-radius: 5px
+	padding: 20px
+	width: 500px
+
+button[type=submit]
+	background-color: $ThirdColor
+	@include Button
+
+.TdAction
+	@include Flex
+
+.SubmitButtonEdit
+	background-color: $SecondaryColor
+	@include Button
+
+.SubmitButtonDelete
+	background-color: red
+	@include Button

@@ -31,7 +31,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "src/assets/styles/SASS/layout.sass",
+              "src/assets/styles/SASS/input-form.sass",
+              "src/assets/styles/SASS/table.sass",
+
             ],
             "scripts": []
           },

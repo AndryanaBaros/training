@@ -1,0 +1,47 @@
+<section class="SectionForm">
+	<div class="DivContainer">
+		<form>
+			<label class="form-label">First Name</label>
+			<input type="text" class="form-control" [(ngModel)]="_modelUser.FirstName" name="FirstName">
+			<label class="form-label">Last Name</label>
+			<input type="text" class="form-control" [(ngModel)]="_modelUser.MiddleName" name="MiddleName">
+			<!-- <label for="exampleInputEmail1" class="form-label">Email address</label>
+			<input type="text" [(ngModel)]="_modelUser.Email" name="Email"> -->
+			<input type="submit" value="Submit" (click)="addData()">
+		</form>
+	</div>
+</section>
+
+<section class="SectionTable">
+	<div>
+		<button type="submit" (click)="show()">Show Data</button>
+		<table class="TableUser">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Code</th>
+					<th scope="col">Name</th>
+					<th scope="col">Created On</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let modelUser of data">
+					<th scope="row">{{modelUser.ID}}</th>
+					<td>{{modelUser.CoreID}}</td>
+					<td>{{modelUser.FirstName}}</td>
+					<td>{{modelUser.MiddleName}}</td>
+					<td class="TdAction">
+						<button class="SubmitButtonEdit" [routerLink]="['edit', [modelUser.ID, modelUser]]">
+							Edit</button>
+						<button class=" SubmitButtonDelete" (click)="deleteUser(modelUser)"> Hapus</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+<!-- <div style="padding: 3em;">
+	<button (click)="openDialog()"></button>
+</div> -->
